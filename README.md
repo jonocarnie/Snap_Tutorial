@@ -1,4 +1,4 @@
-Snap_Tutorial
-=============
+Snap
+====
 
-Snap Tutorial
+This is my tutorial of the snap game
