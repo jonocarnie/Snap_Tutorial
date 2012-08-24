@@ -55,6 +55,8 @@
 		7BF49EAD14EBBB7300AB8472 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 7BF49EA614EBBB7300AB8472 /* iTunesArtwork */; };
 		7BF49EB014EBBC7400AB8472 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF49EAE14EBBC7400AB8472 /* Default.png */; };
 		7BF49EB114EBBC7400AB8472 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF49EAF14EBBC7400AB8472 /* Default@2x.png */; };
+		E371021B15E737B4004B490F /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E371021A15E737B4004B490F /* HostViewController.m */; };
+		E371021F15E737DC004B490F /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E371021D15E737DC004B490F /* HostViewController.xib */; };
 		E3E87A3115E6F7880070AE5E /* Action_Man.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3E87A3015E6F7880070AE5E /* Action_Man.ttf */; };
 		E3E87A3515E6F7E80070AE5E /* UIFont+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E87A3415E6F7E80070AE5E /* UIFont+SnapAdditions.m */; };
 		E3E87A3915E6FBDC0070AE5E /* UIButton+SnapAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E87A3815E6FBDC0070AE5E /* UIButton+SnapAdditions.m */; };
@@ -114,6 +116,9 @@
 		7BF49EA614EBBB7300AB8472 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		7BF49EAE14EBBC7400AB8472 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		7BF49EAF14EBBC7400AB8472 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E371021915E737B4004B490F /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostViewController.h; sourceTree = "<group>"; };
+		E371021A15E737B4004B490F /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostViewController.m; sourceTree = "<group>"; };
+		E371021E15E737DC004B490F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Snap/en.lproj/HostViewController.xib; sourceTree = "<group>"; };
 		E3E87A3015E6F7880070AE5E /* Action_Man.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Action_Man.ttf; sourceTree = "<group>"; };
 		E3E87A3315E6F7E80070AE5E /* UIFont+SnapAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+SnapAdditions.h"; sourceTree = "<group>"; };
 		E3E87A3415E6F7E80070AE5E /* UIFont+SnapAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+SnapAdditions.m"; sourceTree = "<group>"; };
@@ -231,6 +236,9 @@
 				7BF49E2E14E1FCF400AB8472 /* MainViewController.h */,
 				7BF49E2F14E1FCF400AB8472 /* MainViewController.m */,
 				7BF49E3314E1FD3200AB8472 /* MainViewController.xib */,
+				E371021D15E737DC004B490F /* HostViewController.xib */,
+				E371021915E737B4004B490F /* HostViewController.h */,
+				E371021A15E737B4004B490F /* HostViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -350,6 +358,7 @@
 				7B01147A151B432C00A0616D /* Icon-72@2x.png in Resources */,
 				7B01147B151B432C00A0616D /* Icon-Small-50@2x.png in Resources */,
 				E3E87A3115E6F7880070AE5E /* Action_Man.ttf in Resources */,
+				E371021F15E737DC004B490F /* HostViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +374,7 @@
 				7BF49E3114E1FCF400AB8472 /* MainViewController.m in Sources */,
 				E3E87A3515E6F7E80070AE5E /* UIFont+SnapAdditions.m in Sources */,
 				E3E87A3915E6FBDC0070AE5E /* UIButton+SnapAdditions.m in Sources */,
+				E371021B15E737B4004B490F /* HostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +396,14 @@
 			);
 			name = MainViewController.xib;
 			path = Snap;
+			sourceTree = "<group>";
+		};
+		E371021D15E737DC004B490F /* HostViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E371021E15E737DC004B490F /* en */,
+			);
+			name = HostViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

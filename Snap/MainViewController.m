@@ -33,6 +33,9 @@
 @synthesize singlePlayerGameButton = _singlePlayerGameButton;
 
 
+
+
+
 -(void)viewDidLoad{
     
     [super viewDidLoad];
@@ -116,6 +119,63 @@
 }
 
 
+-(void)performExitAnimationWithCompletionBlock:(void (^)(BOOL))block
+{
+    _buttonsEnabled = NO;
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^
+     {
+         self.sImageView.center = self.aImageView.center;
+         self.sImageView.transform = self.aImageView.transform;
+         
+         self.nImageView.center = self.aImageView.center;
+         self.nImageView.transform = self.aImageView.transform;
+         
+         self.pImageView.center = self.aImageView.center;
+         self.pImageView.transform = self.aImageView.transform;
+         
+         self.jokerImageView.center = self.aImageView.center;
+         self.jokerImageView.transform = self.aImageView.transform;
+     }
+     completion:^(BOOL finished)
+     {
+         CGPoint point = CGPointMake(self.aImageView.center.x, self.view.frame.size.height * -2.0f);
+                            
+         [UIView animateWithDuration:1.0f
+                               delay:0.0f
+                             options:UIViewAnimationOptionCurveEaseOut
+                          animations:^
+          {
+              self.sImageView.center = point;
+              self.nImageView.center = point;
+              self.aImageView.center = point;
+              self.pImageView.center = point;
+              self.jokerImageView.center = point;
+          }
+                          completion:block];
+         
+         [UIView animateWithDuration:0.3f
+                               delay:0.3f
+                             options:UIViewAnimationOptionCurveEaseOut
+                          animations:^
+          {
+              self.hostGameButton.alpha = 0.0f;
+              self.joinGameButton.alpha = 0.0f;
+              self.singlePlayerGameButton.alpha = 0.0f;
+          }
+                          completion:nil];
+          
+     }];
+    
+}
+
+
+
+
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -138,6 +198,15 @@
 
 - (IBAction)hostGameAction:(id)sender
 {
+    if (_buttonsEnabled) {
+        [self performExitAnimationWithCompletionBlock:^(BOOL finished)
+         {
+             HostViewController *controller = [[HostViewController alloc] initWithNibName:@"HostViewController" bundle:nil];
+             controller.delegate = self;
+        
+             [self presentViewController:controller animated:NO completion:nil];
+         }];
+    }
 }
 
 - (IBAction)joinGameAction:(id)sender
@@ -146,6 +215,13 @@
 
 - (IBAction)singlePlayerGameAction:(id)sender
 {
+}
+
+
+#pragma mark - HostViewControllerDelegate
+-(void)hostViewControllerDidCancel:(HostViewController *)controller
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end
